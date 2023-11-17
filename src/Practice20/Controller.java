@@ -1,10 +1,8 @@
 package Practice20;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Stack;
 public class Controller {
     private Model model;
     private View view;

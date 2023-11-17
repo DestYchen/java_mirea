@@ -11,25 +11,17 @@ public class View {
     private JButton multiplyButton;
     private JButton divideButton;
     private JButton equalsButton;
-
     public View() {
         frame = new JFrame("Калькулятор");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 400);
-
         display = new JTextField();
         display.setEditable(false);
         display.setSize(150, 150);
         frame.add(display, BorderLayout.NORTH);
-
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridLayout(4, 4));
-
         numberButtons = new JButton[10];
-        /*for (int i = 1; i < 10; i++) {
-            numberButtons[i] = new JButton(String.valueOf(i));
-            buttonPanel.add(numberButtons[i]);
-        }*/
         numberButtons[0] = new JButton(String.valueOf(0));
         numberButtons[1] = new JButton(String.valueOf(1));
         numberButtons[2] = new JButton(String.valueOf(2));
@@ -40,13 +32,11 @@ public class View {
         numberButtons[7] = new JButton(String.valueOf(7));
         numberButtons[8] = new JButton(String.valueOf(8));
         numberButtons[9] = new JButton(String.valueOf(9));
-
         addButton = new JButton("+");
         subtractButton = new JButton("-");
         multiplyButton = new JButton("*");
         divideButton = new JButton("/");
         equalsButton = new JButton("=");
-
         buttonPanel.add(numberButtons[7]);
         buttonPanel.add(numberButtons[8]);
         buttonPanel.add(numberButtons[9]);
@@ -62,19 +52,15 @@ public class View {
         buttonPanel.add(subtractButton);
         buttonPanel.add(multiplyButton);
         buttonPanel.add(equalsButton);
-
         frame.add(buttonPanel, BorderLayout.CENTER);
-
         frame.setVisible(true);
     }
-
     public void addNumberButtonListener(ActionListener listener) {
         for (int i = 1; i < 10; i++) {
             numberButtons[i].addActionListener(listener);
         }
         numberButtons[0].addActionListener(listener);
     }
-
     public void addOperatorButtonListeners(ActionListener listener) {
         addButton.addActionListener(listener);
         subtractButton.addActionListener(listener);
@@ -82,7 +68,6 @@ public class View {
         divideButton.addActionListener(listener);
         equalsButton.addActionListener(listener);
     }
-
     public void updateDisplay(String text) {
         display.setText(text);
     }
